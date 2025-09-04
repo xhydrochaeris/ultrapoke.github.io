@@ -43,6 +43,47 @@
 <h2>So what was in the encounter table!?</h2>
 <p>That depends on your chosen name. The player's name consists of 11 characters, but it is only possible to directly set 7 of those with a custom name. In addition to the three characters in the naming screen, there are two special characters. These are the "end of name" character (ID 80), and the "null" character (ID 0).</p>
 <p>Characters are 8 bit values, so there are 256 possible characters, but only some of them can appear in your name normally. Pokémon IDs are also 8-bit values, so there are 256 possible Pokémon that can appear. However, several of those are glitch Pokémon, and encountering Pokémon with IDs past 200 will result in a battle with a <a href="https://bulbapedia.bulbagarden.net/wiki/Glitch_Trainer">glitch trainer</a>. Pokémon's levels are also 8-bit values, which means they range between 0 and 255. The game only allows leveling up to level 100, and any Pokémon above that level will go back to level 100 if it levels up.</p>
-<p>Suppose our theoretical player character has the name <span style="font-family:GB;">ULTPoke</span></p>
+<p>Suppose our theoretical player character has the name <span style="font-family:GB;">ULTPoke</span>. This name takes up all 7 characters that players are allowed to set, but there are 4 unseen characters as well. The 8th character is the "end-of-name" control character mentioned earlier. It is followed by three "null" characters. All custom names have an "end-of-name" character after their last letter, immediately followed by a series of "null" characters.</p>
+
+<p>The encounter table interprets <span style="font-family:GB;">ULTPoke</span> as a table of 5 Pokémon with their own levels: (interpret the slash (<span style="font-family:GB;">/</span>) characters as invisible control characters)</p>
+
+<p style="text-align: center; font-family: GB">
+<ruby>U<rt style="font-family:NSW;padding-bottom:3px;">148</rt></ruby> 
+<ruby style="color:red">L<rt style="font-family:NSW;padding-bottom:3px;">139</rt></ruby> 
+<ruby style="color:green">T<rt style="font-family:NSW;padding-bottom:3px;">147</rt></ruby> 
+<ruby style="color:red">P<rt style="font-family:NSW;padding-bottom:3px;">143</rt></ruby> 
+<ruby style="color:green">o<rt style="font-family:NSW;padding-bottom:3px;">174</rt></ruby> 
+<ruby style="color:red">k<rt style="font-family:NSW;padding-bottom:3px;">170</rt></ruby> 
+<ruby style="color:green">e<rt style="font-family:NSW;padding-bottom:3px;">164</rt></ruby> 
+<ruby style="color:red">/<rt style="font-family:NSW;padding-bottom:3px;">80</rt></ruby> 
+<ruby style="color:green">/<rt style="font-family:NSW;padding-bottom:3px;">0</rt></ruby> 
+<ruby style="color:red">/<rt style="font-family:NSW;padding-bottom:3px;">0</rt></ruby> 
+<ruby style="color:green">/<rt style="font-family:NSW;padding-bottom:3px;">0</rt></ruby></p>
+
+<p>Every <span style="color:green">green</span> character represents a Pokémon that can be encountered, and every <span style="color:red">red</span> character represents the level of the Pokémon represented by the green character in front of it. The numbers above the characters represent their indices.</p>
+<p><a href="https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_index_number_in_Generation_I">This page</a> lists the internal ID numbers for each Pokémon in Generation I, including glitch Pokémon. The reason so many MissingNo. are interspersed between other Pokémon is because those slots used to be occupied by prototype Pokémon that were eventually scrapped. The programmers were too lazy to clean up and rearrange the indices, so they just dummied out the data.</p>
+<p>In our case, the encounter table consists of:</p>
+<table>
+    <tr>
+      <td><img src="sprites_rb/093_Haunter.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB">HAUNTER<br>Lv. 139</td>
+    </tr>
+    <tr>
+      <td><img src="sprites_rb/Missingno_RB.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB">MISSINGNO.<br>Lv. 143</td>
+    </tr>
+    <tr>
+      <td><img src="sprites_rb/078_Rapidash.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB">RAPIDASH<br>Lv. 170</td>
+    </tr>
+    <tr>
+      <td><img src="sprites_rb/Missingno_RB.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB"><img src="old-man-glitch/RBGlitchName00.png" height="18px" style="padding: 0 0 0 0"><br>Lv. 80</td>
+    </tr>
+    <tr>
+      <td><img src="sprites_rb/Missingno_RB.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB"><img src="old-man-glitch/RBGlitchName00.png" height="18px" style="padding: 0 0 0 0"><br>Lv. 0</td>
+    </tr>
+  </table>
 
 </body>
