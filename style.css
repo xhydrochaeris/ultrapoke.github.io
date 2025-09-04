@@ -8,6 +8,18 @@ body {
     font-family: Roboto;
     src: url(resource_font/Roboto-Regular.ttf);
 }
+@font-face {
+  font-family: N3DS;
+  src: url(resource_font/nintendo_NTLGDB_001.ttf);
+}
+@font-face {
+  font-family: NSW;
+  src: url(resource_font/nintendo_udsgr_std_003.ttf);
+}
+@font-face {
+  font-family: UDK;
+  src: url(resource_font/47211.ttf);
+}
 
 ul {
   padding: 0;
@@ -16,7 +28,7 @@ ul {
 
 li {
   color: darkblue;
-  font-family: Roboto;
+  font-family: NSW;
   font-size: 16px;
   font-weight: 300;
   padding-left: 25%;
@@ -34,7 +46,7 @@ img {
 
 h1 {
   color: indigo;
-  font-family: Roboto;
+  font-family: UDK;
   font-weight: normal;
   font-size: 50px;
   text-align: middle;
@@ -43,7 +55,7 @@ h1 {
   }
 h2 {
 color: indigo;
-font-family: Roboto;
+font-family: N3DS;
 font-weight: normal;
 font-size: 32px;
 text-align: middle;
@@ -51,14 +63,14 @@ padding-left: 25%;
 padding-right: 25%;
 }
 p {
-font-family: Roboto;
+font-family: NSW;
 color: darkblue;
 font-size: 18px;
 padding-left: 25%;
 padding-right: 25%;
 }
 a{
-font-family: 'Roboto', sans-serif;
+font-family: NSW;
 font-size: 18px;
 font-weight: normal;
 color: purple;
