@@ -20,13 +20,29 @@
     <li>The Soul Badge from Koga in <a href=https://bulbapedia.bulbagarden.net/wiki/Fuchsia_City>Fuchsia City</a></li>
     <li>A Pokémon that knows Surf (<a href="https://bulbapedia.bulbagarden.net/wiki/HM03">HM03</a>)</li>
     <li>A Pokémon that knows Fly (<a href="https://bulbapedia.bulbagarden.net/wiki/HM02">HM02</a>)</li>
-    <li>Have visited the Pokémon center in <a href="https://bulbapedia.bulbagarden.net/wiki/Cinnabar_Island">Cinnabar Island</a> once</li>
+    <li>To have visited the Pokémon center in <a href="https://bulbapedia.bulbagarden.net/wiki/Cinnabar_Island">Cinnabar Island</a></li>
 </ul>
 <h2>Demonstration</h2>
-
-<h2>What is the Old Man Glitch?</h2>
-<p>Named after the Old Man in Viridian City, the Old Man Glitch allows players to encounter any Pokémon! To put it simply, during the catching tutorial, the game temporarily replaces the player's name with "OLD MAN". To make sure your original name isn't lost, the game copies your name to the currently loaded grass encounter table. After the tutorial is over, the game restores your original name. However, the game does NOT clear or initialize the encounter table after the tutorial. The game also does not clear the encounter table if you enter a map that does not have a grass encounter table. Viridian City, Cinnabar Island, and Route 20 do not have a grass encounter table, which makes sense, because neither are supposed to have any grass tiles.</p>
-<h2>The <img src="tile.png" height="35px" style="padding-left: 0; padding-right: 0"> tile</h2>
-<p>Bodies of water in Kanto usually have these tiles lined up along their western shores. These tiles can be surfed on, and just like other surfable tiles, they may produce a wild encounter if surfed on. However, in regular gameplay, you might have noticed that the Pokémon encountered while surfing on those tiles are not the same ones as the ones that spawn in deeper waters; they are the same as the ones that spawn in nearby patches of grass. Due to a programming error, these tiles encounter Pokémon from the currently loaded grass encounter table rather than the water encounter table.</p>
+<p>In Viridian City, there is a particular old man <img src="old-man-glitch/oldman-ded.png" height="24px" style="padding-left: 0; padding-right: 0"> who's passed out and blocks your path before you obtain the Pokédex. After you get the Pokédex, he will have gotten up and will be walking around the area.</p>
+<p>If you talk to him, he will ask if you are in a hurry, and if you say no, he will teach you how to catch Pokémon. In the catching demonstration, he will catch a wild Weedle that shows up out of the blue. He will show you how to catch this Weedle as many times as you want if you just talk to him again. Sounds pretty neat, doesn't it?</p>
+<img src="old-man-glitch/oldman-overworld-npc.png" class="photo-row-3l">
+<img src="old-man-glitch/weedle-appears.png" class="photo-row-3m">
+<img src="old-man-glitch/weedle-caught.png" class="photo-row-3r">
+<p>Despite being so rudimentary, this tutorial is always available, even when you're at the very end of the game. If you've already gotten to Cinnabar Island, then after completing the tutorial, you can immediately fly over to Cinnabar Island, walk to the eastern shore, and surf alongside the shore tiles...</p>
+<img src="old-man-glitch/shore.png" class="photo-row-2l">
+<img src="old-man-glitch/shore-surf.png" class="photo-row-2r">
+<h2 style="text-align: center; font-style: italic;">HUH!??</h2>
+<img src="old-man-glitch/wild-'m.png" class="photo-row-1">
+<h2>What just happened?</h2>
+<p>Named after the Old Man <img src="old-man-glitch/oldman.png" height="24px" style="padding-left: 0; padding-right: 0"> in Viridian City, the Old Man Glitch allows players to encounter several rare Pokémon, including glitch Pokémon. During the catching tutorial, the game temporarily replaces the player's name with <span style="font-family:GB;">OLD MAN</span>.</p>
+<p>To make sure your original name isn't lost, the game copies your name to the currently loaded grass encounter table. After the tutorial is over, the game restores your original name.</p>
+<p>However, the game does NOT clear or initialize the encounter table after the tutorial. The game also does not clear the encounter table if you enter a map that does not have a grass encounter table. Viridian City, Cinnabar Island, and Route 20 do not have a grass encounter table, which makes sense, because neither are supposed to have any grass tiles.</p>
+<h2>The <img src="old-man-glitch/tile.png" height="36px" style="padding-left: 0; padding-right: 0"> tile</h2>
+<p>Bodies of water in Kanto usually have these tiles lined up along their western shores. These tiles can be surfed on, and just like other surfable tiles, they may produce a wild encounter if surfed on.</p>
+<p>However, in regular gameplay, you might have noticed that the Pokémon encountered while surfing on those tiles are not the same ones as the ones that spawn in deeper waters; they are the same as the ones that spawn in nearby patches of grass. Due to a programming error, these tiles encounter Pokémon from the currently loaded grass encounter table rather than the water encounter table.</p>
+<h2>So what was in the encounter table!?</h2>
+<p>That depends on your chosen name. The player's name consists of 11 characters, but it is only possible to directly set 7 of those with a custom name. In addition to the three characters in the naming screen, there are two special characters. These are the "end of name" character (ID 80), and the "null" character (ID 0).</p>
+<p>Characters are 8 bit values, so there are 256 possible characters, but only some of them can appear in your name normally. Pokémon IDs are also 8-bit values, so there are 256 possible Pokémon that can appear. However, several of those are glitch Pokémon, and encountering Pokémon with IDs past 200 will result in a battle with a <a href="https://bulbapedia.bulbagarden.net/wiki/Glitch_Trainer">glitch trainer</a>. Pokémon's levels are also 8-bit values, which means they range between 0 and 255. The game only allows leveling up to level 100, and any Pokémon above that level will go back to level 100 if it levels up.</p>
+<p>Suppose our theoretical player character has the name <span style="font-family:GB;">ULTPoke</span></p>
 
 </body>

@@ -20,6 +20,10 @@ body {
   font-family: UDK;
   src: url(resource_font/47211.ttf);
 }
+@font-face {
+  font-family: GB;
+  src: url(resource_font/PokemonGb-RAeo.ttf);
+}
 
 ul {
   padding: 0;
@@ -97,6 +101,38 @@ header img{
   width: 15%;
   padding-left: 0;
   padding-right: 10%;
+}
+
+img.photo-row-3l{
+  width: 16%;
+  padding-left: 25%;
+  padding-right: 0;
+}
+img.photo-row-3m{
+  width: 16%;
+  padding-left: 0;
+  padding-right: 0;
+}
+img.photo-row-3r{
+  width: 16%;
+  padding-right: 25%;
+  padding-left: 0;
+}
+
+img.photo-row-2l{
+  width: 16%;
+  padding-left: 33%;
+  padding-right: 0;
+}
+img.photo-row-2r{
+  width: 16%;
+  padding-right: 33%;
+  padding-left: 0;
+}
+img.photo-row-1{
+  width: 16%;
+  padding-left: 42%;
+  padding-right: 42%;
 }
 
 .search {
