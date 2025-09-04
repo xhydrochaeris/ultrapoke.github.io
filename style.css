@@ -33,6 +33,7 @@ li {
   font-weight: 300;
   padding-left: 25%;
   padding-right: 25%;
+  line-height: 1.5;
 }
 
 .active {
@@ -68,12 +69,14 @@ color: darkblue;
 font-size: 18px;
 padding-left: 25%;
 padding-right: 25%;
+line-height: 1.5;
 }
 a{
 font-family: NSW;
 font-size: 18px;
 font-weight: normal;
 color: purple;
+line-height: 1.5;
 }
 a:hover{
 background-color: #8080e2;
