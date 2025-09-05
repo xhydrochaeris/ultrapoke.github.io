@@ -148,6 +148,7 @@ img.photo-row-1{
 table, th, td {
   font-family: NSW;
   color: darkblue;
+  font-size: 18px;
   border: 1px solid indigo;
   border-radius: 5px;
   background-color:teal;
