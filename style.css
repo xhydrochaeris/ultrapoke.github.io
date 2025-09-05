@@ -39,6 +39,9 @@ li {
   padding-right: 25%;
   line-height: 1.5;
 }
+li a{
+  font-size: 16px;
+}
 
 .active {
   color: #88CCF1;
@@ -100,7 +103,11 @@ padding: 20px 20px 20px 20px;
 header img{
   width: 15%;
   padding-left: 0;
-  padding-right: 10%;
+  padding-right: 7%;
+}
+header a.home {
+  visibility: hidden;
+  padding: 0px 0px 0px 0px;
 }
 
 img.photo-row-3l{
@@ -133,6 +140,10 @@ img.photo-row-1{
   width: 16%;
   padding-left: 42%;
   padding-right: 42%;
+}
+
+img.big-block{
+  width: 50%;
 }
 
 .search {

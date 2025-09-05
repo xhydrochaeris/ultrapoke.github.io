@@ -9,8 +9,8 @@
 </head>
 <body style="background-color: lavender">
 <header>
-<img src="../ultrapoke.png">
-<a href="../index.html">Home</a>
+<a style="all: unset; cursor: pointer;" href="../index.html"><img src="../ultrapoke.png"></a>
+<a class="home" href="../index.html">Home</a>
 <a href="../shinyguides.html">Shiny Hunting</a>
 </header>
 <p style="font-size:12">&larr; Back to <a style="font-size: 12;" href="rb.html">Red/Blue Guides</a></p>
@@ -35,7 +35,7 @@
 <h2 style="text-align: center; font-style: italic;">HUH!??</h2>
 <img src="old-man-glitch/wild-'m.png" class="photo-row-1">
 <h2>What just happened?</h2>
-<p>Named after the Old Man <img src="old-man-glitch/oldman.png" height="24px" style="padding-left: 0; padding-right: 0"> in Viridian City, the Old Man Glitch allows players to encounter several rare Pokémon, including glitch Pokémon. During the catching tutorial, the game temporarily replaces the player's name with <span style="font-family:GB;">OLD MAN</span>.</p>
+<p>Named after the Old Man <img src="old-man-glitch/oldman.png" height="24px" style="padding-left: 0; padding-right: 0"> in Viridian City, the Old Man Glitch allows players to encounter several rare Pokémon, including glitch Pokémon such as the infamous <a href="https://bulbapedia.bulbagarden.net/wiki/MissingNo.">MissingNo.</a>. During the catching tutorial, the game temporarily replaces the player's name with <span style="font-family:GB;">OLD MAN</span>.</p>
 <p>To make sure your original name isn't lost, the game copies your name to the currently loaded grass encounter table. After the tutorial is over, the game restores your original name.</p>
 <p>However, the game does NOT clear or initialize the encounter table after the tutorial. The game also does not clear the encounter table if you enter a map that does not have a grass encounter table. Viridian City, Cinnabar Island, and Route 20 do not have a grass encounter table, which makes sense, because neither are supposed to have any grass tiles.</p>
 <h2>The <img src="old-man-glitch/tile.png" height="36px" style="padding-left: 0; padding-right: 0"> tile</h2>
@@ -46,7 +46,7 @@
 <p>Characters are 8 bit values, so there are 256 possible characters, but only some of them can appear in your name normally. Pokémon IDs are also 8-bit values, so there are 256 possible Pokémon that can appear. However, several of those are glitch Pokémon, and encountering Pokémon with IDs past 200 will result in a battle with a <a href="https://bulbapedia.bulbagarden.net/wiki/Glitch_Trainer">glitch trainer</a>. Pokémon's levels are also 8-bit values, which means they range between 0 and 255. The game only allows leveling up to level 100, and any Pokémon above that level will go back to level 100 if it levels up.</p>
 <p>Suppose our theoretical player character has the name <span style="font-family:GB;">ULTPoke</span>. This name takes up all 7 characters that players are allowed to set, but there are 4 unseen characters as well. The 8th character is the "end-of-name" control character mentioned earlier. It is followed by three "null" characters. All custom names have an "end-of-name" character after their last letter, immediately followed by a series of "null" characters.</p>
 
-<p>The encounter table interprets <span style="font-family:GB;">ULTPoke</span> as a table of 5 Pokémon with their own levels: (interpret the slash (<span style="font-family:GB;">/</span>) characters as invisible control characters)</p>
+<p>The encounter table interprets <span style="font-family:GB;">ULTPoke</span> as a table of 5 Pokémon with their own levels: (the slash (<span style="font-family:GB;">/</span>) characters represent invisible control characters)</p>
 
 <h2 style="text-align: center;font-size: 22px;">
 <ruby style="font-family:GB">U<rt style="font-family:NSW;padding-bottom:3px;">148</rt></ruby>
@@ -85,6 +85,111 @@
       <td><img src="sprites_rb/Missingno_RB.png" height="60px" style="padding: 0 0 0 0"></td>
       <td style="font-family:GB"><img src="old-man-glitch/RBGlitchName00.png" height="18px" style="padding: 0 0 0 0"><br>Lv. 0</td>
     </tr>
-  </table>
+</table>
+<p>The following table shows all possible name characters and what Pokémon and levels they result in for the Old Man Glitch: ("\0" represents the null character, "\e" represents the end of name marker)</p>
+<img class="big-block" src="old-man-glitch/oldman-pokemon.png">
+<p>Characters that are available in the naming screen but are not listed here result in encountering a glitch trainer. Unless you know what you're doing, you'll probably want to avoid those. If you want to encounter a glitch trainer on purpose, <a href="https://bulbapedia.bulbagarden.net/wiki/Old_man_glitch#Custom_name">this page</a> lists the characters and IDs that result in glitch trainers, and <a href="https://bulbapedia.bulbagarden.net/wiki/Glitch_Trainer#Old_man_glitch_method">this page</a> lists some of the possible glitch teams that you can get using this method, depending on the last trainer you fought.</p>
+
+<h2>What about preset names?</h2>
+<p>When you first start the game, you are given the choice of three preset names. These names are <span style="font-family:GB;">RED</span>, <span style="font-family:GB;">ASH</span>, and <span style="font-family:GB;">JACK</span> if you're playing Pokémon Red, or <span style="font-family:GB;">BLUE</span>, <span style="font-family:GB;">GARY</span>, and <span style="font-family:GB;">JOHN</span> if you're playing Pokémon Blue.</p>
+<p>Internally, these names are stored as the following strings: (the slash (<span style="font-family:GB;">/</span>) characters represent the end of name marker)</p>
+<p><span style="font-family:GB;">RED/ASH/JACK/NEW NAME</span></p>
+<p><span style="font-family:GB;">BLUE/GARY/JOHN/NEW NAME</span></p>
+<p>Players who selected these names get the following encounter tables:</p>
+<table>
+    <tr>
+        <th colspan="2" style="font-family:GB">RED/ASH/JAC</th>
+        <th colspan="2" style="font-family:GB">ASH/JACK/NE</th>
+        <th colspan="2" style="font-family:GB">JACK/NEW NA</th>
+    </tr>
+    <tr>
+      <td><img src="sprites_rb/150_Mewtwo.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB">MEWTWO<br>Lv. 132</td>
+      <td><img src="sprites_rb/Missingno_RB.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB">MISSINGNO.<br>Lv. 146</td>
+      <td><img src="sprites_rb/042_Golbat.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB">GOLBAT<br>Lv. 128</td>
+    </tr>
+    <tr>
+      <td><img src="sprites_rb/055_Golduck.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB">GOLDUCK<br>Lv. 80</td>
+      <td><img src="sprites_rb/Missingno_RB.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB">MISSINGNO.<br>Lv. 80</td>
+      <td><img src="sprites_rb/Missingno_RB.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB">MISSINGNO.<br>Lv. 138</td>
+    </tr>
+    <tr>
+      <td><img src="sprites_rb/Missingno_RB.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB">MISSINGNO.<br>Lv. 146</td>
+      <td><img src="sprites_rb/042_Golbat.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB">GOLBAT<br>Lv. 128</td>
+      <td><img src="sprites_rb/143_Snorlax.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB">SNORLAX<br>Lv. 141</td>
+    </tr>
+    <tr>
+      <td><img src="sprites_rb/Missingno_RB.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB">MISSINGNO.<br>Lv. 80</td>
+      <td><img src="sprites_rb/Missingno_RB.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB">MISSINGNO.<br>Lv. 138</td>
+      <td><img src="sprites_rb/Missingno_RB.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB">MISSINGNO.<br>Lv. 150</td>
+    </tr>
+    <tr>
+      <td><img src="sprites_rb/042_Golbat.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB">GOLBAT<br>Lv. 128</td>
+      <td><img src="sprites_rb/143_Snorlax.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB">SNORLAX<br>Lv. 141</td>
+      <td><img src="sprites_rb/055_Golduck.png" height="60px" style="padding: 0 0 0 0"></td>
+      <td style="font-family:GB">GOLDUCK<br>Lv. 141</td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <th colspan="2" style="font-family:GB">BLUE/GARY/J</th>
+        <th colspan="2" style="font-family:GB">GARY/JOHN/N</th>
+        <th colspan="2" style="font-family:GB">JOHN/NEW NA</th>
+    </tr>
+    <tr>
+        <td><img src="sprites_rb/063_Abra.png" height="60px" style="padding: 0 0 0 0"></td>
+        <td style="font-family:GB">ABRA<br>Lv. 139</td>
+        <td><img src="sprites_rb/105_Marowak.png" height="60px" style="padding: 0 0 0 0"></td>
+        <td style="font-family:GB">MAROWAK<br>Lv. 128</td>
+        <td><img src="sprites_rb/Missingno_RB.png" height="60px" style="padding: 0 0 0 0"></td>
+        <td style="font-family:GB">MISSINGNO.<br>Lv. 142</td>
+      </tr>
+      <tr>
+        <td><img src="sprites_rb/Missingno_RB.png" height="60px" style="padding: 0 0 0 0"></td>
+        <td style="font-family:GB">MISSINGNO.<br>Lv. 132</td>
+        <td><img src="sprites_rb/Missingno_RB.png" height="60px" style="padding: 0 0 0 0"></td>
+        <td style="font-family:GB">MISSINGNO.<br>Lv. 152</td>
+        <td><img src="sprites_rb/Missingno_RB.png" height="60px" style="padding: 0 0 0 0"></td>
+        <td style="font-family:GB">MISSINGNO.<br>Lv. 141</td>
+      </tr>
+      <tr>
+        <td><img src="sprites_rb/055_Golduck.png" height="60px" style="padding: 0 0 0 0"></td>
+        <td style="font-family:GB">GOLDUCK<br>Lv. 134</td>
+        <td><img src="sprites_rb/036_Clefable.png" height="60px" style="padding: 0 0 0 0"></td>
+        <td style="font-family:GB">CLEFABLE<br>Lv. 137</td>
+        <td><img src="sprites_rb/143_Snorlax.png" height="60px" style="padding: 0 0 0 0"></td>
+        <td style="font-family:GB">SNORLAX<br>Lv. 141</td>
+      </tr>
+      <tr>
+        <td><img src="sprites_rb/121_Starmie.png" height="60px" style="padding: 0 0 0 0"></td>
+        <td style="font-family:GB">STARMIE<br>Lv. 145</td>
+        <td><img src="sprites_rb/101_Electrode.png" height="60px" style="padding: 0 0 0 0"></td>
+        <td style="font-family:GB">ELECTRODE<br>Lv. 135</td>
+        <td><img src="sprites_rb/Missingno_RB.png" height="60px" style="padding: 0 0 0 0"></td>
+        <td style="font-family:GB">MISSINGNO.<br>Lv. 150</td>
+      </tr>
+      <tr>
+        <td><img src="sprites_rb/Missingno_RB.png" height="60px" style="padding: 0 0 0 0"></td>
+        <td style="font-family:GB">MISSINGNO.<br>Lv. 80</td>
+        <td><img src="sprites_rb/101_Electrode.png" height="60px" style="padding: 0 0 0 0"></td>
+        <td style="font-family:GB">ELECTRODE<br>Lv. 80</td>
+        <td><img src="sprites_rb/055_Golduck.png" height="60px" style="padding: 0 0 0 0"></td>
+        <td style="font-family:GB">GOLDUCK<br>Lv. 141</td>
+      </tr>
+</table>
+<p>No matter what name you pick, you are guaranteed to have <span style="font-family:GB;">MISSINGNO.</span> or <img src="old-man-glitch/RBGlitchName00.png" height="18px" style="padding: 0 0 0 0"> in your encounter table. This makes the Old Man Glitch the ideal way to trigger the next glitch on our menu, <a href="item-duplication.html">Item Duplication</a>!!</p>
 
 </body>

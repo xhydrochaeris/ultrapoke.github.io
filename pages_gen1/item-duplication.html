@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../style-small.css" media="screen and (max-width: 1025px)">
+<link rel="stylesheet" href="../style.css" media="screen and (min-width: 1025px)">
+<title>Item Duplication - UltraPoké Resource Center</title>
+<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=0.7">
+</head>
+<body style="background-color: lavender">
+<header>
+<a style="all: unset; cursor: pointer;" href="../index.html"><img src="../ultrapoke.png"></a>
+<a class="home" href="../index.html">Home</a>
+<a href="../shinyguides.html">Shiny Hunting</a>
+</header>
+<p style="font-size:12">&larr; Back to <a style="font-size: 12;" href="rb.html">Red/Blue Guides</a></p>
+<h1>Item Duplication</h1>
+<h2>Prerequisites:</h2>
+<p>To perform the Item Duplication Glitch, you need:</p>
+<ul>
+    <li>To reliably perform the <a href="old-man-glitch.html">Old Man Glitch</a></li>
+    <li>An item you want to duplicate</li>
+    <li>Five other random items in your bag</li>
+</ul>
+<h2>Demonstration</h2>
+<p>Remember how we encountered a glitch Pokémon back in the Old Man Glitch demonstration?</p>
+<img src="old-man-glitch/wild-'m.png" class="photo-row-1">
+<p>If we run from this encounter and then check our bag, we'll find something interesting:</p>
+<img src="old-man-glitch/129-master-balls.png" class="photo-row-1">
+<p>We have 129 Master Balls, an item quantity that is normally impossible, so the game is not programmed to display it properly.</p>
+<h2>What just happened?</h2>
+<p>The glitch Pokémon we encountered is our new friend, <img src="old-man-glitch/RBGlitchName00.png" height="18px" style="padding: 0 0 0 0">. It is very similar to MissingNo., but its name is garbage data. For our purposes, it doesn't matter which one we encounter. We just have to encounter a Pokémon with a Pokédex number of 0, which <img src="old-man-glitch/RBGlitchName00.png" height="18px" style="padding: 0 0 0 0"> and all forms of MissingNo. have.</p>
+<p>No matter what name you pick, you are guaranteed to have MissingNo. or <img src="old-man-glitch/RBGlitchName00.png" height="18px" style="padding: 0 0 0 0"> in your encounter table. This makes the Old Man Glitch the ideal way to trigger the Item Duplication glitch.</p>
+<p>Every Pokémon has a Pokédex entry and a SEEN and CAUGHT flag. When you encounter a Pokémon, its SEEN flag is activated, and when you catch it, its CAUGHT flag is activated. The 0th Pokémon in the Pokédex also has such flags, but the SEEN flag for the 0th Pokémon happens to be located in the memory segment corresponding to your bag, particularly at the most significant bit of your sixth item's quantity.</p>
+<p>The quantity of the Master Ball prior to the encounter was 1, or in binary representation:</p>
+
+<h2 style="text-align: center;font-size: 22px;font-family:GB">
+<ruby>0<rt style="font-family:NSW;padding-bottom:3px;">128</rt></ruby>
+<ruby>0<rt style="font-family:NSW;padding-bottom:3px;">64</rt></ruby>
+<ruby>0<rt style="font-family:NSW;padding-bottom:3px;">32</rt></ruby>
+<ruby>0<rt style="font-family:NSW;padding-bottom:3px;">16</rt></ruby>
+<ruby>0<rt style="font-family:NSW;padding-bottom:3px;">8</rt></ruby>
+<ruby>0<rt style="font-family:NSW;padding-bottom:3px;">4</rt></ruby>
+<ruby>0<rt style="font-family:NSW;padding-bottom:3px;">2</rt></ruby>
+<ruby>1<rt style="font-family:NSW;padding-bottom:3px;">1</rt></ruby></h2>
+<p>Each bit has the quantity it represents written above it. To get the item quantity in decimal, take the sum of all the quantities above all the 1's.</p>
+<p>After encountering <img src="old-man-glitch/RBGlitchName00.png" height="18px" style="padding: 0 0 0 0">, this is the quantity of the Master Ball:</p>
+<h2 style="text-align: center;font-size: 22px;font-family:GB">
+  <ruby>1<rt style="font-family:NSW;padding-bottom:3px;">128</rt></ruby>
+  <ruby>0<rt style="font-family:NSW;padding-bottom:3px;">64</rt></ruby>
+  <ruby>0<rt style="font-family:NSW;padding-bottom:3px;">32</rt></ruby>
+  <ruby>0<rt style="font-family:NSW;padding-bottom:3px;">16</rt></ruby>
+  <ruby>0<rt style="font-family:NSW;padding-bottom:3px;">8</rt></ruby>
+  <ruby>0<rt style="font-family:NSW;padding-bottom:3px;">4</rt></ruby>
+  <ruby>0<rt style="font-family:NSW;padding-bottom:3px;">2</rt></ruby>
+  <ruby>1<rt style="font-family:NSW;padding-bottom:3px;">1</rt></ruby></h2>
+<p>This is the binary representation of the number 129.</p>
+<p>This glitch can be performed for any item. You just have to use the SELECT button to move it to the 6th slot, and make sure its item count is less than 128.</p>
+
+</body>
