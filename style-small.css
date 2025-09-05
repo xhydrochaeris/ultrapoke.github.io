@@ -33,7 +33,7 @@ ul {
 li {
   color: darkblue;
   font-family: NSW;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
   padding-left: 5%;
   padding-right: 5%;
@@ -70,14 +70,14 @@ padding-right: 5%;
 p {
 font-family: NSW;
 color: darkblue;
-font-size: 18px;
+font-size: 14px;
 padding-left: 5%;
 padding-right: 5%;
 line-height: 1.5;
 }
 a{
 font-family: NSW;
-font-size: 18px;
+font-size: 14px;
 font-weight: normal;
 color: purple;
 line-height: 1.5;
